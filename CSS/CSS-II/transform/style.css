@@ -1,0 +1,102 @@
+/*
+Transform::CSS transforms allow you to move, rotate, scale, 
+           and skew elements.
+
+          { Transform property.}
+translate(): moves an element from its current position (according to
+             the parameters given for the X-axis and the Y-axis).
+rotate(): rotates an element clockwise or counter-clockwise according
+          to a given degree.
+          Using negative values will rotate the element 
+          counter-clockwise.
+scaleX(): increases or decreases the width of an element.
+scaleY(): scaleY() method increases or decreases the height
+          of an element.
+scale(): method increases or decreases the size of an element
+        (according to the parameters given for the width and height).
+skewX(): skews an element along the X-axis by the given angle.
+skewY(): skews an element along the Y-axis by the given angle.
+skew(): skews an element along the X and Y-axis by the given angles.
+matrix(): combines all the 2D transform methods into one.
+
+*/
+
+.one {
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: rotateZ(10deg);
+}
+
+.two {
+    height: 80px;
+    width: 80px;
+    background-color: orange;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: translateX(50px) translateY(40px);
+}
+
+.three {
+    height: 80px;
+    width: 80px;
+    background-color: yellow;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: rotate(45deg) translateX(200px);
+}
+
+.four {
+    height: 60px;
+    width: 80px;
+    background-color: green;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: skew(-40deg) skewY(40deg) skewX(40deg) skewY(-40deg);
+}
+
+.five {
+    height: 80px;
+    width: 80px;
+    background-color: magenta;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: skew(30deg, 30deg) rotate(35deg);
+}
+
+.six {
+    height: 80px;
+    width: 80px;
+    background-color: blueviolet;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: scale(1, 1);
+}
+
+.seven {
+    height: 100px;
+    width: 300px;
+    background-color: blueviolet;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+.eight {
+    height: 100px;
+    width: 300px;
+    background-color: blueviolet;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: matrix(1, 0, 0.5, 1, 150, 0);
+}

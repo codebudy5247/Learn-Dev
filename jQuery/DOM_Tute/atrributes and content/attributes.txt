@@ -1,0 +1,18 @@
+document.getElementsByClassName('para')
+HTMLCollection(2) [p#p1.para, p#p2.para, p1: p#p1.para, p2: p#p2.para]
+letr p2=document.getElementsByClassName('para')[1]
+VM242:1 Uncaught SyntaxError: Unexpected identifier
+let p2=document.getElementsByClassName('para')[1]
+undefined
+p2
+<p class=​"para" id=​"p2">​This is another para​</p>​
+p2.innerText
+"This is another para"
+p2.innerHTML
+"This is another para"
+p2.outerHTML
+"<p class="para" id="p2">This is another para</p>"
+p2.innerText="some new data"
+"some new data"
+p2.innerHTML='hello<b>bold<b> text'
+"hello<b>bold<b> text"

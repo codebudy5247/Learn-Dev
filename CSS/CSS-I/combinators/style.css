@@ -1,0 +1,10 @@
+/* descendant selector (space)
+    select all <p> under div elements*/
+
+div p {
+    background-color: yellow;
+}
+
+.div1>p {
+    background-color: yellow;
+}

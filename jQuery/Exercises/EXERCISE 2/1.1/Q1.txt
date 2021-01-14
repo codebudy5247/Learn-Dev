@@ -1,0 +1,13 @@
+==>Create an index.html file. You must fill in valid id and other
+   attributes for these elements to make the buttons work.
+
+Using Javascript do the following:
+
+When the user clicks the button the following must happen:
+
+=>If the user is older than 18 print You can drive in India! in the p 
+  tag.
+=>If the user is younger than 18 print You can't drive in India in
+  the p tag.
+=>If the user is exactly 18 years old print You are just old enough to 
+     drive in India! in the p tag.

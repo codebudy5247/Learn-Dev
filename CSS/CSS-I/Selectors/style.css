@@ -1,0 +1,39 @@
+/* (*)-->universal selector*/
+
+* {
+    background-color: yellow;
+}
+
+
+/*Id selector*/
+
+#head {
+    color: tomato;
+    text-align: center;
+}
+
+
+/*class selector*/
+
+.big {
+    background-color: rgb(21, 255, 0);
+    width: 50%;
+    height: 40px;
+}
+
+#para1 {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*grouping selectors*/
+
+h3,
+h4,
+p {
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}

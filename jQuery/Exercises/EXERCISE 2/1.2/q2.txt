@@ -1,0 +1,6 @@
+Using JavaScript do the following:
+
+=>When the button Click here to change my color is clicked, the color of 
+  the button must change according to the text input.
+ Eg: If the text input is red the color of the button must also
+     change to red!

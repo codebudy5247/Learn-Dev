@@ -1,0 +1,36 @@
+/*
+rotateX(): rotates an element around its X-axis at a given degree.
+rotateY(): rotates an element around its Y-axis at a given degree:
+rotateZ(): rotates an element around its Z-axis at a given degree:
+
+*/
+
+.one {
+    height: 80px;
+    width: 80px;
+    background-color: red;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: rotateX(150deg);
+}
+
+.two {
+    height: 80px;
+    width: 80px;
+    background-color: orange;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: rotateY(130deg);
+}
+
+.three {
+    height: 80px;
+    width: 80px;
+    background-color: aqua;
+    padding: 10px;
+    color: darkslategray;
+    text-align: center;
+    transform: rotateZ(90deg);
+}

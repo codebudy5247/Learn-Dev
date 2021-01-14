@@ -1,0 +1,24 @@
+.box {
+    margin: 20px;
+    padding: 10px;
+    border: solid black 3px;
+}
+
+#div1 {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+#div2 {
+    background-color: lightsalmon;
+    text-align: center;
+}
+
+#div3 {
+    background-color: lightcyan;
+}
+
+div p {
+    color: lightseagreen;
+    text-align: center;
+}
