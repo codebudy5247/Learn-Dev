@@ -133,7 +133,7 @@ app.post("/paynow", [parseUrl, parseJson], (req, res) => {
     res.status(400).send("Payment failed");
   } else {
     var params = {};
-    params["MID"] = "CxEyOE71252754937504";
+    params["MID"] = "iSmutE90846750748530";
     params["WEBSITE"] = config.PaytmConfig.website;
     params["CHANNEL_ID"] = "WEB";
     params["INDUSTRY_TYPE_ID"] = "Retail";
