@@ -3,10 +3,10 @@ const https = require("https");
 const qs = require("querystring");
 const colors = require("colors");
 const dotenv = require("dotenv");
-dotenv.config();
+dotenv.config()
 
-const paypal = require("paypal-rest-sdk");
 //Paypal Config
+const paypal = require("paypal-rest-sdk");
 paypal.configure({
   mode: "sandbox", //sandbox or live
   client_id:
@@ -23,91 +23,24 @@ app.set("view engine", "ejs");
 const parseUrl = express.urlencoded({ extended: false });
 const parseJson = express.json({ extended: false });
 
+//Import routes
+const paymentRoutes = require("./routes/paypal")
+
+
+
+//Middleware for consoling every request
+app.use((req, res, next) => {
+  console.log(`${req.method}`.bold.green + `  ${req.originalUrl}`.dim);
+  next();
+});
+
 //Routes
 app.get("/", (req, res) => {
   res.render("index");
 });
 
-//Pay Routes  { PAYPAL }
-app.post("/pay", (req, res) => {
-  const create_payment_json = {
-    intent: "sale",
-    payer: {
-      payment_method: "paypal",
-    },
-    redirect_urls: {
-      return_url: "http://localhost:5000/success",
-      cancel_url: "http://localhost:5000/cancel",
-    },
-    transactions: [
-      {
-        item_list: {
-          items: [
-            {
-              name: "Full stack developer course",
-              sku: "001",
-              price: "25.00",
-              currency: "USD",
-              quantity: 1,
-            },
-          ],
-        },
-        amount: {
-          currency: "USD",
-          total: "25.00",
-        },
-        description: "full stack developer course",
-      },
-    ],
-  };
+app.use("/payment",paymentRoutes)
 
-  paypal.payment.create(create_payment_json, function (error, payment) {
-    if (error) {
-      throw error;
-    } else {
-      for (let i = 0; i < payment.links.length; i++) {
-        if (payment.links[i].rel === "approval_url") {
-          res.redirect(payment.links[i].href);
-        }
-      }
-      // console.log(payment)
-      // res.send('test')
-    }
-  });
-});
-
-app.get("/success", (req, res) => {
-  const payerId = req.query.PayerID;
-  const paymentId = req.query.paymentId;
-
-  const execute_payment_json = {
-    payer_id: payerId,
-    transactions: [
-      {
-        amount: {
-          currency: "USD",
-          total: "25.00",
-        },
-      },
-    ],
-  };
-
-  paypal.payment.execute(
-    paymentId,
-    execute_payment_json,
-    function (error, payment) {
-      if (error) {
-        console.log(error.response);
-        throw error;
-      } else {
-        console.log(payment);
-        res.send(`<center><h1>PAYMENT SUCESSFULL</h1></center>`);
-      }
-    }
-  );
-});
-
-app.get("/cancel", (req, res) => res.send("Cancelled"));
 
 // const paytmRoutes = require('./routes/paytmRoutes')
 // app.use('/payment',paytmRoutes)
